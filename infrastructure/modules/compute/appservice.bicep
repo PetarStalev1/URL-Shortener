@@ -1,37 +1,30 @@
 param location string = resourceGroup().location
+param appServicePlanName string
 param appName string
 
-// REQUIRED for Functions
-param storageAccountName string = 'st${uniqueString(resourceGroup().id)}'
-
-resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
-  name: storageAccountName
+resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
+  kind: 'linux'
   location: location
-  sku: {
-    name: 'Standard_LRS'
+  name: appServicePlanName
+  properties: {
+    reserved: true
   }
-  kind: 'StorageV2'
+  sku: {
+    name: 'F1' 
+  }
 }
 
-// Function App (NO App Service Plan)
-resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
+resource webApp 'Microsoft.Web/sites@2023-12-01' = {
   name: appName
   location: location
-  kind: 'functionapp,linux'
   properties: {
+    serverFarmId: appServicePlan.id
     httpsOnly: true
+    siteConfig: {
+      linuxFxVersion: 'DOTNETCORE|8.0'
+     
+    }
   }
 }
 
-// Settings for Azure Functions
-resource appSettings 'Microsoft.Web/sites/config@2023-12-01' = {
-  parent: functionApp
-  name: 'appsettings'
-  properties: {
-    AzureWebJobsStorage: 'DefaultEndpointsProtocol=https;AccountName=${storage.name};AccountKey=${storage.listKeys().keys[0].value};EndpointSuffix=core.windows.net'
-    FUNCTIONS_WORKER_RUNTIME: 'dotnet-isolated'
-    WEBSITE_RUN_FROM_PACKAGE: '1'
-  }
-}
-
-output functionAppId string = functionApp.id
+output appServiceId string = webApp.id
