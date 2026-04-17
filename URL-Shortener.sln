@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api.Core.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Core", "Api\src\UrlShortener.Core\UrlShortener.Core.csproj", "{0CF153ED-4359-4B2C-928B-F03B49C4A807}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Tests", "Api\tests\UrlShortener.Tests\UrlShortener.Tests.csproj", "{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,18 @@ Global
 		{0CF153ED-4359-4B2C-928B-F03B49C4A807}.Release|x64.Build.0 = Release|Any CPU
 		{0CF153ED-4359-4B2C-928B-F03B49C4A807}.Release|x86.ActiveCfg = Release|Any CPU
 		{0CF153ED-4359-4B2C-928B-F03B49C4A807}.Release|x86.Build.0 = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|x64.Build.0 = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Debug|x86.Build.0 = Debug|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|x64.ActiveCfg = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|x64.Build.0 = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|x86.ActiveCfg = Release|Any CPU
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +85,6 @@ Global
 		{CBE2916D-EF40-4A29-91E5-3FDA6A2892D0} = {D82C56D6-B2CD-F611-9E31-04638F7EC30E}
 		{44AD8D00-9409-4127-B610-AE29CF04610B} = {CBE2916D-EF40-4A29-91E5-3FDA6A2892D0}
 		{0CF153ED-4359-4B2C-928B-F03B49C4A807} = {2EA3E342-6572-4D03-ACE4-17649E31C6F8}
+		{D3AD1267-D636-47FC-8A0F-633E1FFE31B0} = {CBE2916D-EF40-4A29-91E5-3FDA6A2892D0}
 	EndGlobalSection
 EndGlobal
